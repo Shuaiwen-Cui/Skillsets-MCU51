@@ -1,0 +1,128 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    03/17/2024  15:56:58  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+D:\KEIL-C51\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\project PRINT (.\Listings\project.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  D:\KEIL-C51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     002FH     UNIT         ?PR?MAIN?MAIN
+            CODE    0032H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\project (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+
+
+UNRESOLVED EXTERNAL SYMBOLS:
+   DELAY500MS
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\project (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0003H         PUBLIC        main
+  -------         PROC          MAIN
+  C:0003H         LINE#         4
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  03/17/2024  15:56:58  PAGE 2
+
+
+  C:0003H         LINE#         7
+  C:0003H         LINE#         8
+  C:0006H         LINE#         9
+  C:0009H         LINE#         10
+  C:000CH         LINE#         11
+  C:000FH         LINE#         12
+  C:0012H         LINE#         13
+  C:0015H         LINE#         14
+  C:0018H         LINE#         15
+  C:001BH         LINE#         16
+  C:001EH         LINE#         17
+  C:0021H         LINE#         18
+  C:0024H         LINE#         19
+  C:0027H         LINE#         20
+  C:002AH         LINE#         21
+  C:002DH         LINE#         22
+  C:0030H         LINE#         23
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  DELAY500MS
+    MODULE:  .\Objects\main.obj (MAIN)
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DELAY500MS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0007H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DELAY500MS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 000DH
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DELAY500MS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0013H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DELAY500MS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0019H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DELAY500MS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 001FH
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DELAY500MS
+    MODULE:  .\Objects\main.obj (MAIN)
+    ADDRESS: 0025H
+
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  DELAY500MS
+    MODULE:  .\Objects\main.obj (MAIN)
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  03/17/2024  15:56:58  PAGE 3
+
+
+    ADDRESS: 002BH
+
+Program Size: data=9.0 xdata=0 code=62
+LINK/LOCATE RUN COMPLETE.  8 WARNING(S),  0 ERROR(S)
