@@ -1,0 +1,59 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              03/26/2024 14:16:19 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\KEIL-C51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\mai
+                    -n.lst) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "Matrix_LED.h"
+   3          
+   4          // 定义图案数据，注意是按列循环的
+   5          // 下面这个数据如果不加"code"，就会存储在片内RAM中，可能会导致存储空间不足�
+             -��
+   6          // 添加"code"之后，这个数组就会存储在片外Flash上，空间很大，但不允许更改。
+   7          unsigned char code led_animation[] = 
+   8          {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   9           0x00,0x0A,0x7E,0x1C,0x7E,0x0E,0x04,0x04,
+  10            0x30,0xFB,0xFF,0x3C,0xFF,0xFF,0x34,0x0C,
+  11           0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+  12          //
+  13          void main(){
+  14   1        unsigned char cur_pic[8];
+  15   1        unsigned char col=0,offset=0;//取出当前需要显示的数据
+  16   1        unsigned int MAX_OFFSET = sizeof(led_animation)-8;
+  17   1        unsigned int cnt_show = 0;//显示次数计数
+  18   1        unsigned char MAX_CNT = 15;//控制显示速率
+  19   1        MatrixLED_Init(); //LED点阵屏初始化
+  20   1        while(1){
+  21   2          for(offset=0;offset<MAX_OFFSET;offset+=8){
+  22   3            cnt_show = 0;
+  23   3            // 取出当前需要显示的数据
+  24   3            for(col=0;col<8;col++){
+  25   4              cur_pic[col]=led_animation[col+offset];
+  26   4            }
+  27   3            // 重复显示以控制动画速度
+  28   3            do{
+  29   4              MatrixLED_ShowPic(cur_pic);
+  30   4              cnt_show++;
+  31   4            }while(cnt_show<MAX_CNT);
+  32   3          }
+  33   2        }
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     97    ----
+   CONSTANT SIZE    =     32    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      15
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

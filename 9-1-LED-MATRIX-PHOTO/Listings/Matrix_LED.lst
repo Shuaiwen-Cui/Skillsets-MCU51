@@ -1,0 +1,80 @@
+C51 COMPILER V9.60.7.0   MATRIX_LED                                                        03/26/2024 20:55:57 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MATRIX_LED
+OBJECT MODULE PLACED IN .\Objects\Matrix_LED.obj
+COMPILER INVOKED BY: D:\KEIL-C51\C51\BIN\C51.EXE Matrix_LED.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listin
+                    -gs\Matrix_LED.lst) OBJECT(.\Objects\Matrix_LED.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          
+   3          /*随开发板的不同，此段代码中的端口定义会有所变化，使用前注意更新*/
+   4          /**********************************************************/
+   5          // LED点阵通用，延时cycles ms，晶振@11.0592MHz
+   6          static void Delay(unsigned int cycles){
+   7   1        unsigned char i, j;
+   8   1        do{
+   9   2          i = 2;
+  10   2          j = 199;
+  11   2          do{
+  12   3            while (--j);
+  13   3          }while (--i);
+  14   2        }while(--cycles);
+  15   1      }
+  16          
+  17          // 为了方便，先给几个引脚重新起名
+  18          sbit RCK = P3^5; // 重复了所以不叫RCLK
+  19          sbit SCK = P3^6; // SRCLK
+  20          sbit SER = P3^4;
+  21          #define MATRIX_LED_PORT P0
+  22          /*********************************************************/
+  23          
+  24          /*下面的代码无需更新*/
+  25          /*********************************************************/
+  26          /**
+  27            * @brief :向74HC595串行输入口输入8bit数据。
+  28            * @param :输入的8bit数据，高位先进。
+  29            * @retval :无。
+  30           */
+  31          void _74HC595_WriteByte(unsigned char Byte){
+  32   1        unsigned char i;
+  33   1        for(i=0;i<8;i++){
+  34   2          SER = Byte&(0x80>>i); // 右边只要不是0，1bit宽度的SER就为1
+  35   2          SCK = 1;
+  36   2          SCK = 0;
+  37   2        }
+  38   1        RCK = 1;
+  39   1        RCK = 0;
+  40   1      }
+  41          
+  42          /**
+  43            * @brief :在LED点阵的指定列，输入数据。
+  44            * @param :Column，列位置，范围0~7。
+  45            * @param :Data，该列需要显示的数据。
+  46            * @retval :无。
+  47           */
+  48          void MatrixLED_ShowColumn(unsigned char Column,Data){
+  49   1        _74HC595_WriteByte(Data); // 段选信号
+  50   1        MATRIX_LED_PORT = ~(0x80>>Column); // 片选信号
+  51   1        Delay(1);
+  52   1        MATRIX_LED_PORT = 0xff; // 消影
+  53   1      }
+  54          /*********************************************************/
+C51 COMPILER V9.60.7.0   MATRIX_LED                                                        03/26/2024 20:55:57 PAGE 2   
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     97    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
