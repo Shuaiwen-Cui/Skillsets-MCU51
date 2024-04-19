@@ -10,11 +10,10 @@
       <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x0</ToolsetNumber>
       <ToolsetName>MCS-51</ToolsetName>
-      <uAC6>8</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>AT89C52</Device>
-          <Vendor>Microchip</Vendor>
+          <Vendor>Atmel</Vendor>
           <Cpu>IRAM(0-0xFF) IROM(0-0x1FFF) CLOCK(24000000)</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>"LIB\STARTUP.A51" ("Standard 8051 Startup Code")</StartupFile>
@@ -218,14 +217,12 @@
             <Mx51P>0</Mx51P>
             <hadXRAM2>0</hadXRAM2>
             <uocXram2>0</uocXram2>
-            <hadXRAM3>0</hadXRAM3>
             <ModC2>0</ModC2>
             <ModH2>0</ModH2>
             <Mdu_R515>0</Mdu_R515>
             <Mdu_F120>0</Mdu_F120>
             <Psoc>0</Psoc>
             <hadIROM2>0</hadIROM2>
-            <hadIROM3>0</hadIROM3>
             <ModSmx2>0</ModSmx2>
             <cBanks>0</cBanks>
             <xBanks>0</xBanks>
@@ -233,7 +230,7 @@
               <RCB>
                 <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0xffff</Size>
+                <Size>0x10000</Size>
               </RCB>
               <RXB>
                 <Type>0</Type>
@@ -295,16 +292,6 @@
                 <StartAddress>0x0</StartAddress>
                 <Size>0x0</Size>
               </IROM512>
-              <XRA513>
-                <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
-              </XRA513>
-              <IROM513>
-                <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
-              </IROM513>
             </OnChipMemories>
           </Target51Misc>
           <C51>
@@ -348,7 +335,7 @@
             <DataOverlaying>1</DataOverlaying>
             <OverlayString></OverlayString>
             <MiscControls></MiscControls>
-            <DisableWarningNumbers>16</DisableWarningNumbers>
+            <DisableWarningNumbers></DisableWarningNumbers>
             <LinkerCmdFile></LinkerCmdFile>
             <Assign></Assign>
             <ReserveString></ReserveString>
@@ -382,26 +369,6 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>LCD1602.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LCD1602.c</FilePath>
-            </File>
-            <File>
-              <FileName>LCD1602.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\LCD1602.h</FilePath>
-            </File>
-            <File>
-              <FileName>DS1302.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\DS1302.c</FilePath>
-            </File>
-            <File>
-              <FileName>DS1302.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\DS1302.h</FilePath>
-            </File>
-            <File>
               <FileName>Delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Delay.c</FilePath>
@@ -412,9 +379,14 @@
               <FilePath>.\Delay.h</FilePath>
             </File>
             <File>
-              <FileName>Key.c</FileName>
+              <FileName>Nixie.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Key.c</FilePath>
+              <FilePath>.\Nixie.c</FilePath>
+            </File>
+            <File>
+              <FileName>Nixie.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Nixie.h</FilePath>
             </File>
             <File>
               <FileName>Key.h</FileName>
@@ -422,14 +394,19 @@
               <FilePath>.\Key.h</FilePath>
             </File>
             <File>
-              <FileName>Timer0.c</FileName>
+              <FileName>Key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Timer0.c</FilePath>
+              <FilePath>.\Key.c</FilePath>
             </File>
             <File>
               <FileName>Timer0.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Timer0.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Timer0.c</FilePath>
             </File>
           </Files>
         </Group>

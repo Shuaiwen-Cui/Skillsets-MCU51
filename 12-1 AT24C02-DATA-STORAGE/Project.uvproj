@@ -14,7 +14,7 @@
       <TargetOption>
         <TargetCommonOption>
           <Device>AT89C52</Device>
-          <Vendor>Microchip</Vendor>
+          <Vendor>Atmel</Vendor>
           <Cpu>IRAM(0-0xFF) IROM(0-0x1FFF) CLOCK(24000000)</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>"LIB\STARTUP.A51" ("Standard 8051 Startup Code")</StartupFile>
@@ -233,7 +233,7 @@
               <RCB>
                 <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0xffff</Size>
+                <Size>0x10000</Size>
               </RCB>
               <RXB>
                 <Type>0</Type>
@@ -348,7 +348,7 @@
             <DataOverlaying>1</DataOverlaying>
             <OverlayString></OverlayString>
             <MiscControls></MiscControls>
-            <DisableWarningNumbers>16</DisableWarningNumbers>
+            <DisableWarningNumbers></DisableWarningNumbers>
             <LinkerCmdFile></LinkerCmdFile>
             <Assign></Assign>
             <ReserveString></ReserveString>
@@ -382,24 +382,9 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>LCD1602.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LCD1602.c</FilePath>
-            </File>
-            <File>
-              <FileName>LCD1602.h</FileName>
+              <FileName>Delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\LCD1602.h</FilePath>
-            </File>
-            <File>
-              <FileName>DS1302.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\DS1302.c</FilePath>
-            </File>
-            <File>
-              <FileName>DS1302.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\DS1302.h</FilePath>
+              <FilePath>.\Delay.h</FilePath>
             </File>
             <File>
               <FileName>Delay.c</FileName>
@@ -407,9 +392,14 @@
               <FilePath>.\Delay.c</FilePath>
             </File>
             <File>
-              <FileName>Delay.h</FileName>
+              <FileName>LCD1602.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Delay.h</FilePath>
+              <FilePath>.\LCD1602.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD1602.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LCD1602.c</FilePath>
             </File>
             <File>
               <FileName>Key.c</FileName>
@@ -422,14 +412,24 @@
               <FilePath>.\Key.h</FilePath>
             </File>
             <File>
-              <FileName>Timer0.c</FileName>
+              <FileName>AT24C02.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Timer0.c</FilePath>
+              <FilePath>.\AT24C02.c</FilePath>
             </File>
             <File>
-              <FileName>Timer0.h</FileName>
+              <FileName>I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\I2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>AT24C02.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Timer0.h</FilePath>
+              <FilePath>.\AT24C02.h</FilePath>
+            </File>
+            <File>
+              <FileName>I2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\I2C.h</FilePath>
             </File>
           </Files>
         </Group>

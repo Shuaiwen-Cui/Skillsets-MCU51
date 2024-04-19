@@ -348,7 +348,7 @@
             <DataOverlaying>1</DataOverlaying>
             <OverlayString></OverlayString>
             <MiscControls></MiscControls>
-            <DisableWarningNumbers>16</DisableWarningNumbers>
+            <DisableWarningNumbers></DisableWarningNumbers>
             <LinkerCmdFile></LinkerCmdFile>
             <Assign></Assign>
             <ReserveString></ReserveString>
@@ -382,26 +382,6 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>LCD1602.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LCD1602.c</FilePath>
-            </File>
-            <File>
-              <FileName>LCD1602.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\LCD1602.h</FilePath>
-            </File>
-            <File>
-              <FileName>DS1302.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\DS1302.c</FilePath>
-            </File>
-            <File>
-              <FileName>DS1302.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\DS1302.h</FilePath>
-            </File>
-            <File>
               <FileName>Delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Delay.c</FilePath>
@@ -422,14 +402,24 @@
               <FilePath>.\Key.h</FilePath>
             </File>
             <File>
-              <FileName>Timer0.c</FileName>
+              <FileName>Nixie.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Timer0.c</FilePath>
+              <FilePath>.\Nixie.c</FilePath>
             </File>
             <File>
-              <FileName>Timer0.h</FileName>
+              <FileName>Nixie.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Timer0.h</FilePath>
+              <FilePath>.\Nixie.h</FilePath>
+            </File>
+            <File>
+              <FileName>Buzzer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Buzzer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Buzzer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Buzzer.h</FilePath>
             </File>
           </Files>
         </Group>
